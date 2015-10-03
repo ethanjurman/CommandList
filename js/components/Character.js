@@ -1,14 +1,14 @@
 import React from 'react';
 
-let Make = React.createClass({
+let Character = React.createClass({
 
   render() {
     return(
       <div>
-        Welcome to the Make Page
+        Character
       </div>
     );
   }
 });
 
-export default Make;
+export default Character;

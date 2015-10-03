@@ -2,14 +2,21 @@ import React from 'react';
 import Router from 'react-router';
 import { DefaultRoute, Link, Route, RouteHandler } from 'react-router';
 
-import MakeHandler from './components/Make.js';
+import AddGameHandler from './components/AddGame.js';
+import EditGameHandler from './components/EditGame.js';
+import GameSelectHandler from './components/GameSelect.js';
 
 let App = React.createClass({
   render() {
     return (
-      <div className="nav">
-        <Link to="/make">Make</Link>
-        {this.props.children}
+      <div className="app">
+        <div className="nav">
+          <Link to="/">Home</Link>
+          <Link to="/addGame">Add Game</Link>
+          <Link to="/editGame">Edit Game</Link>
+          <GameSelectHandler/>
+          {this.props.children}
+        </div>
       </div>
     );
   }
@@ -17,7 +24,8 @@ let App = React.createClass({
 
 let routes = (
   <Route path="/" component={App}>
-    <Route path="/make" component={MakeHandler}/>
+    <Route path="/addGame" component={AddGameHandler}/>
+    <Route path="/editGame" component={EditGameHandler}/>
   </Route>
 );
 

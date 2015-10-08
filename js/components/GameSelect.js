@@ -1,36 +1,34 @@
 import Dropdown from 'react-dropdown';
-import React from 'react';
+import React, {Component} from 'react';
 
-let GameSelect = React.createClass({
+export default class GameSelect extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {games:[]};
+  }
+
+  componentDidMount() {
+    var self = this;
+    var req = new XMLHttpRequest();
+    req.open('GET','/games'); // TODO this is ugly
+    req.onload = () => {
+      if (req.status >= 200 && req.status < 400) {
+        var games = JSON.parse(req.response);
+        console.log(games);
+        self.setState({games});
+      }
+    };
+    req.send();
+  }
+
   _onSelect(option) {
     console.log('selected ', option.label);
-  },
-  render() {
-    var options = [
-      { value: 'bat', label: 'Battle Arena Toshinden' },
-      { value: 'whj', label: 'World Heroes Jet' },
-      {
-        type: 'group', name: 'Guilty Gear', items: [
-          { value: 'gg', label: 'Guilty Gear' },
-          { value: 'ggx', label: 'Guilty Gear X' },
-          { value: 'ggxx', label: 'Guilty Gear XX' },
-          { value: 'ggxrd', label: 'Guilty Gear Xrd' },
-        ]
-      },
-      {
-        type: 'group', name: 'BlazBlue', items: [
-          { value: 'bbct', label: 'BlazBlue: Calamity Trigger' },
-          { value: 'bbcs', label: 'BlazBlue: Continuum Shift' },
-          { value: 'bbcp', label: 'BlazBlue: Chrono Phantasma' }
-        ]
-      }
-    ];
+  }
 
-    var defaultOption = { value: 'None', label: 'Select Game' };
+  render() {
+    var defaultOption = { "value": 'None', "label": 'Select Game' };
     return (
-      <Dropdown options={options} onChange={this._onSelect} value={defaultOption} />
+      <Dropdown options={this.state.games} onChange={this._onSelect} value={defaultOption} />
     )
   }
-});
-
-export default GameSelect;
+};

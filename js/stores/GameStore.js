@@ -1,17 +1,20 @@
-import alt from '../alt'
-var GameActions = require('../actions/GameActions');
+import alt from '../alt';
+import GameActions from '../actions/GameActions'
 
 class GameStore {
   constructor() {
-    this.game = "";
-    this.bindActions(GameActions);
+    this.bindListeners({
+      updateGame: GameActions.updateGame
+    });
+
+    this.state = {
+      game: {name:"",characters:[]}
+    };
   }
 
-  onUpdateGame(game) {
-    this.game = game;
-    console.log(this.game);
-    this.errorMessage = null;
+  updateGame(game) {
+    this.setState({ game: game.game });
   }
 }
 
-module.exports = alt.createStore(GameStore, 'GameStore');
+export default alt.createStore(GameStore, 'GameStore');

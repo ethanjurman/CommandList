@@ -1,3 +1,9 @@
 import alt from '../alt';
 
-module.exports = alt.generateActions("updateGame");
+class GameActions {
+  updateGame(game) {
+    return { game }
+  }
+}
+
+export default alt.createActions(GameActions);

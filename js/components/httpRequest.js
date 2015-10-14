@@ -3,7 +3,7 @@ export default (url,callback) => {
   req.open('GET',url);
   req.onload = () => {
     if (req.status >= 200 && req.status < 400) {
-      callback(JSON.parse(req.response));
+      callback(req.response);
     }
   };
   req.send();

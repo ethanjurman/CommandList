@@ -5,7 +5,7 @@ import source from 'vinyl-source-stream';
 import server from './server';
 
 gulp.task('default', ['build','server','watch']);
-gulp.task('build',['build:css','build:html','build:js'])
+gulp.task('build',['build:svg','build:css','build:html','build:js'])
 
 // building my top level javascript files
 gulp.task('build:js', () => {
@@ -32,6 +32,11 @@ gulp.task('build:css', () => {
     .pipe(gulp.dest('build'));
 });
 
+gulp.task('build:svg', () => {
+  return gulp.src(['svgs/*.svg'])
+    .pipe(gulp.dest('build/svgs/'))
+});
+
 // running an express server (look at server.js for more info)
 gulp.task('server', () => {
   const port = process.env.PORT || 8080;
@@ -40,4 +45,6 @@ gulp.task('server', () => {
 
 gulp.task('watch', () => {
   gulp.watch('js/**/*', ['build']);
+  gulp.watch('css/*', ['build']);
+  gulp.watch('gulpfile.babel.js',['build'])
 });

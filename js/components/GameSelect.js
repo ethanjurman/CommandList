@@ -1,6 +1,6 @@
 import Dropdown from 'react-dropdown';
 import React, {Component} from 'react';
-import httpRequest from './httpRequest';
+import HttpRequest from './HttpRequest';
 import GameStore from '../stores/GameStore';
 import GameActions from '../actions/GameActions';
 
@@ -11,17 +11,19 @@ export default class GameSelect extends Component {
   }
 
   componentDidMount() {
-    self = this;
-    httpRequest('http://localhost:9000/games', (response) => {
-      console.log(response);
+    let self = this;
+    HttpRequest('http://localhost:9000/games', (response) => {
+      // set the state of the selector to the game object
+      response = JSON.parse(response);
       self.setState({games:response});
     });
   }
 
   _onSelect(option) {
     console.log('selected ', option.label, option.value);
-    httpRequest('http://localhost:9000/games/' + option.value, (response) => {
-      GameActions.updateGame(response);
+    HttpRequest('http://localhost:9000/games/' + option.value, (response) => {
+      // set the store of the application to the game object
+      GameActions.updateGame(JSON.parse(response));
     });
   }
 

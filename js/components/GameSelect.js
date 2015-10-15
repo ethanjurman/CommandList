@@ -12,7 +12,7 @@ export default class GameSelect extends Component {
 
   componentDidMount() {
     let self = this;
-    HttpRequest('http://localhost:9000/games', (response) => {
+    HttpRequest('/db/games', (response) => {
       // set the state of the selector to the game object
       response = JSON.parse(response);
       self.setState({games:response});
@@ -21,7 +21,7 @@ export default class GameSelect extends Component {
 
   _onSelect(option) {
     console.log('selected ', option.label, option.value);
-    HttpRequest('http://localhost:9000/games/' + option.value, (response) => {
+    HttpRequest('/db/games/' + option.value, (response) => {
       // set the store of the application to the game object
       GameActions.updateGame(JSON.parse(response));
     });

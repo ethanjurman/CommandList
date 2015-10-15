@@ -16,7 +16,8 @@
     "react": "^0.13.3",
     "react-dropdown": "^0.5.1",
     "tls": "0.0.1",
-    "vinyl-source-stream": "^1.1.0"
+    "vinyl-source-stream": "^1.1.0",
+    "fightersDatabase": "git://github.com/ethanjurman/fightersDatabase.git"
   },
   "devDependencies": {
     "babel-core": "^5.8.25",

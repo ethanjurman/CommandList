@@ -47,14 +47,14 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.7"
-     inkscape:cx="334.51357"
-     inkscape:cy="366.13937"
+     inkscape:zoom="7.9195959"
+     inkscape:cx="19.505211"
+     inkscape:cy="23.418454"
      inkscape:document-units="px"
-     inkscape:current-layer="layer7"
+     inkscape:current-layer="g4212"
      showgrid="false"
      inkscape:window-width="958"
-     inkscape:window-height="1003"
+     inkscape:window-height="792"
      inkscape:window-x="-8"
      inkscape:window-y="0"
      inkscape:window-maximized="0" />
@@ -66,23 +66,10 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
-  <g
-     inkscape:label="background_circle"
-     inkscape:groupmode="layer"
-     id="layer1"
-     style="display:inline;opacity:1"
-     transform="translate(0,-343.70079)">
-    <circle
-       style="fill:#00ffff;fill-opacity:1;fill-rule:evenodd;stroke:#ffffff;stroke-width:1.23190033px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       id="path3336"
-       cx="362.7395"
-       cy="668.29114"
-       r="314.83502" />
-  </g>
   <g
      inkscape:label="background_kick"
      id="g4212"
@@ -101,6 +88,13 @@
        id="path4234"
        d="m 678.83681,628.61904 c 0,0 -2e-5,-107.49868 -81.90376,-175.32521 0,0 -110.05815,83.1835 -194.52138,159.96827 -44.79112,0 -149.73031,-2.55951 -208.59863,-60.14808 -35.83289,-48.63035 -28.15441,-112.61765 -95.98095,-134.37334 -47.220844,32.67176 44.09907,224.52626 78.06451,262.34796 38.39238,16.63669 46.07087,7.67845 63.98731,29.43415 35.83289,40.95187 85.74298,218.83658 95.98095,213.7176 15.35695,10.23798 301.34576,-264.85417 342.97195,-295.62135 z"
        style="display:inline;opacity:1;fill:#00ffff;fill-opacity:1;fill-rule:evenodd;stroke:#00ffff;stroke-width:50.67535782;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <circle
+       transform="translate(0,-1.5552655e-6)"
+       style="display:inline;opacity:1;fill:#00ffff;fill-opacity:1;fill-rule:evenodd;stroke:#ffffff;stroke-width:1.23190033px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       id="path3336"
+       cx="362.7395"
+       cy="668.29114"
+       r="314.83502" />
   </g>
   <g
      inkscape:groupmode="layer"

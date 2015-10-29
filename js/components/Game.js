@@ -1,6 +1,5 @@
 import connectToStores from 'alt/utils/connectToStores';
 import React, {Component} from 'react';
-import GameStore from '../stores/GameStore';
 import Character from './Character';
 
 class Game extends Component{
